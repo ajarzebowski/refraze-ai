@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Refraze AI",
+  "version": "1.0",
+  "description": "Right-click selected text and rephrase it using OpenAI, Google AI Studio (Gemini), or Groq. Shows the result in a popup with a copy button.",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "jarzebowski.andrzej@gmail.com"
+    }
+  },
+
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "scripting",
+    "storage",
+    "clipboardWrite"
+  ],
+
+  "host_permissions": [
+    "https://api.openai.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://api.groq.com/*"
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+    "icons": {
+    "48": "icons/refraze-no-txt.png",
+    "96": "icons/refraze-no-txt.png"
+  },
+
+  "action": {
+    "default_icon": "icons/refraze-no-txt.png",
+    "default_popup": "popup.html",
+    "default_title": "Rephrase results"
+  }
+}

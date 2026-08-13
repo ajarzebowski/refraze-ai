@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Refraze AI — Settings</title>
+  <style>
+    body {
+      font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+      max-width: 520px;
+      margin: 40px auto;
+      color: #1a1a1a;
+    }
+    h1 { font-size: 18px; }
+    h2 { font-size: 14px; margin-top: 28px; margin-bottom: 4px; }
+    p { color: #555; line-height: 1.4; font-size: 13px; }
+    .provider-block {
+      border: 1px solid #e2e2e2;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+    .provider-block.active {
+      border-color: #10a37f;
+      background: #f4fbf9;
+    }
+    label { font-size: 13px; font-weight: 600; }
+    input[type="password"], input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .radio-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .radio-row input { width: auto; margin: 0; }
+    .radio-row label { font-size: 14px; font-weight: 600; }
+    button {
+      margin-top: 20px;
+      padding: 9px 18px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      background: #10a37f;
+      color: white;
+    }
+    button:hover { background: #0d8c6d; }
+    #status {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #10a37f;
+      min-height: 16px;
+    }
+    a { color: #10a37f; }
+    .hint { font-size: 12px; color: #888; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Refraze AI — Settings</h1>
+  <p>
+    Choose which provider handles rephrasing, and paste its API key.
+    Only the selected provider's key needs to be filled in — the others can stay empty.
+  </p>
+
+  <div class="provider-block" id="block-openai">
+    <div class="radio-row">
+      <input type="radio" name="provider" id="radio-openai" value="openai">
+      <label for="radio-openai">OpenAI (ChatGPT)</label>
+    </div>
+    <p>Paid API. Get a key at <a href="https://platform.openai.com/api-keys" target="_blank">platform.openai.com/api-keys</a>.</p>
+    <input type="password" id="key-openai" placeholder="sk-...">
+  </div>
+
+  <div class="provider-block" id="block-gemini">
+    <div class="radio-row">
+      <input type="radio" name="provider" id="radio-gemini" value="gemini">
+      <label for="radio-gemini">Google AI Studio (Gemini)</label>
+    </div>
+    <p>Free tier, no credit card required. Get a key at <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com/apikey</a>.</p>
+    <input type="password" id="key-gemini" placeholder="AIza...">
+  </div>
+
+  <div class="provider-block" id="block-groq">
+    <div class="radio-row">
+      <input type="radio" name="provider" id="radio-groq" value="groq">
+      <label for="radio-groq">Groq</label>
+    </div>
+    <p>Free tier, no credit card required, very fast. Get a key at <a href="https://console.groq.com/keys" target="_blank">console.groq.com/keys</a>.</p>
+    <input type="password" id="key-groq" placeholder="gsk_...">
+  </div>
+
+  <button id="save">Save</button>
+  <div id="status"></div>
+</body>
+<script src="options.js"></script>
+</html>
