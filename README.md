@@ -22,16 +22,6 @@ A Firefox extension that rephrases selected text using an LLM of your choice —
 
 The extension will stay loaded until you restart Firefox. You'll need to reload it manually (via the **Reload** button in `about:debugging`) after making code changes.
 
-### Permanent install
-
-Firefox requires extensions to be signed to install permanently in release builds. To distribute your own signed build:
-
-1. Zip the contents of this folder (not the folder itself).
-2. Submit the zip at [addons.mozilla.org/developers](https://addons.mozilla.org/developers/) for signing.
-3. Install the signed `.xpi` that Mozilla returns.
-
-Alternatively, use Firefox Developer Edition or Nightly with signature enforcement disabled (`xpinstall.signatures.required` set to `false` in `about:config`) for local, permanent use.
-
 ## Setup
 
 You need an API key from at least one provider.
