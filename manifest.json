@@ -24,6 +24,17 @@
     "https://api.groq.com/*"
   ],
 
+  "browser_specific_settings": {
+    "gecko": {
+        "id": "@refraze-ai-extension-without-data-collection",
+        "data_collection_permissions": {
+          "required": [
+            "none"
+          ]
+         }
+      }
+  },
+
   "background": {
     "scripts": ["background.js"]
   },
@@ -33,12 +44,12 @@
     "open_in_tab": true
   },
     "icons": {
-    "48": "icons/refraze-no-txt.png",
-    "96": "icons/refraze-no-txt.png"
+    "48": "icons/refraze-no-txt-48.png",
+    "96": "icons/refraze-no-txt-96.png"
   },
 
   "action": {
-    "default_icon": "icons/refraze-no-txt.png",
+    "default_icon": "icons/refraze-no-txt-48.png",
     "default_popup": "popup.html",
     "default_title": "Rephrase results"
   }
